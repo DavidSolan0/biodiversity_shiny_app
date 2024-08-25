@@ -1,3 +1,18 @@
+## Repository Structure
+
+This repository is organized into the following key directories and files:
+
+- **`src/`**: Contains the core components of the Shiny application.
+  - **`UI.R`**: Defines the user interface of the Shiny app.
+  - **`server.R`**: Contains the server logic for the Shiny app.
+  - **`app_deployment.R`**: Script for deploying the app to ShinyApps.io. Instructions for creating a token and linking it to your local workspace are provided below.
+  - **`modules/`**: Contains Shiny modules required for the app. These are organized as separate R files to modularize the app's functionality.
+
+- **`data/`**: Stores the data files used by the app.
+  - **`normalized/`**: Contains the input data in its normalized form, used for processing and analysis within the app.
+
+---
+
 ## Recreating the R Environment
 
 This project uses `renv` for managing R package dependencies. To recreate the environment specified in the `renv.lock` file, follow these steps:
@@ -57,19 +72,6 @@ By following these steps, you’ll ensure that all necessary packages are instal
 Certainly! Here’s how you can structure the repository section in your `README.md` to explain the folder organization and provide instructions for deploying the app to ShinyApps.io, including token creation:
 
 ---
-
-## Repository Structure
-
-This repository is organized into the following key directories and files:
-
-- **`src/`**: Contains the core components of the Shiny application.
-  - **`UI.R`**: Defines the user interface of the Shiny app.
-  - **`server.R`**: Contains the server logic for the Shiny app.
-  - **`app_deployment.R`**: Script for deploying the app to ShinyApps.io. Instructions for creating a token and linking it to your local workspace are provided below.
-  - **`modules/`**: Contains Shiny modules required for the app. These are organized as separate R files to modularize the app's functionality.
-
-- **`data/`**: Stores the data files used by the app.
-  - **`normalized/`**: Contains the input data in its normalized form, used for processing and analysis within the app.
 
 ## Deploying the App to ShinyApps.io
 
