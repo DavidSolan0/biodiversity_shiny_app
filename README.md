@@ -13,6 +13,12 @@ This repository is organized into the following key directories and files:
 
 ---
 
+## Accessing the Published App
+
+You can access the published Shiny app at [http://david-solano.shinyapps.io/biodiversity_shiny_app](http://david-solano.shinyapps.io/biodiversity_shiny_app).
+
+---
+
 ## Recreating the R Environment
 
 This project uses `renv` for managing R package dependencies. To recreate the environment specified in the `renv.lock` file, follow these steps:
@@ -67,9 +73,6 @@ This project uses `renv` for managing R package dependencies. To recreate the en
    This will display the status of the project’s packages and indicate if everything is up-to-date.
 
 By following these steps, you’ll ensure that all necessary packages are installed and the environment matches the one used during the development of this project.
-
-
-Certainly! Here’s how you can structure the repository section in your `README.md` to explain the folder organization and provide instructions for deploying the app to ShinyApps.io, including token creation:
 
 ---
 
