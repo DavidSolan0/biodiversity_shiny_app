@@ -1,3 +1,5 @@
+[![Shiny_Dashboard_CICD_Check](https://github.com/DavidSolan0/biodiversity_shiny_app/actions/workflows/main.yaml/badge.svg)](https://github.com/DavidSolan0/biodiversity_shiny_app/actions/workflows/main.yaml)
+
 ## Repository Structure
 
 This repository is organized into the following key directories and files:
