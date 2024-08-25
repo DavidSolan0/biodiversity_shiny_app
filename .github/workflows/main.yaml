@@ -19,7 +19,8 @@ jobs:
 
     - name: Install R package dependencies
       run: |
-        renv::restore()
+        Rscript -e 'install.packages("renv")'
+        Rscript -e 'renv::restore()'
 
     - name: Run tests
       run: |
