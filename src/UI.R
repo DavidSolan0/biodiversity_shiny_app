@@ -7,23 +7,14 @@ library(RColorBrewer)
 
 # setwd("C:/Users/Dsola/OneDrive/Documentos/appsilon/biodiversity_shiny_app")
 
+# Load data
+load("data/normalized/ocurrence.RData")
+
 # Load custom modules
 source("src/modules/filterModule.R")
-source("src/modules/dateRangeInputModule.R")
 source("src/modules/mapModule.R")
 source("src/modules/timelinePlotModule.R")
 source("src/modules/defaultMessageModule.R")
-
-selected_columns <- c("longitudeDecimal", "latitudeDecimal", "scientificName", "vernacularName", "eventDate")
-
-data <- read.csv2("data/normalized/occurence.csv", sep=",")[selected_columns]
-data <- data %>%
-  mutate(
-    across(c(longitudeDecimal, latitudeDecimal), as.numeric),
-    eventDate = as.Date(eventDate)
-  ) %>%
-  filter(!is.na(longitudeDecimal) & !is.na(latitudeDecimal))
-
 
 # Define UI for application
 ui <- dashboardPage(
@@ -31,7 +22,7 @@ ui <- dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("Map", tabName = "map", icon = icon("map")),
-      filterUI("filter")
+      filterUI("filter", occurence_data)
     )
   ),
   dashboardBody(

@@ -1,21 +1,21 @@
 # Filter Module
 
-filterUI <- function(id) {
+filterUI <- function(id, occurence_data) {
   ns <- NS(id)
   tagList(
     selectInput(ns("filter_column"), "Select column to filter:", choices = c("scientificName", "vernacularName")),
-    selectInput(ns("filter_value"), "Select value(s):", choices = NULL, multiple = TRUE),
+    selectInput(ns("filter_value"), "Select species for map:", choices = NULL, multiple = TRUE),
     selectInput(ns("species_value"), "Select species for timeline:", choices = NULL, multiple = TRUE),
-    dateRangeInput(ns("date_range"), "Select Date Range:", start = min(data$eventDate, na.rm = TRUE), end = max(data$eventDate, na.rm = TRUE)),
+    dateRangeInput(ns("date_range"), "Select Date Range:", start = min(occurence_data$eventDate, na.rm = TRUE), end = max(occurence_data$eventDate, na.rm = TRUE)),
     actionButton(ns("reset_date"), "Reset Date Filter", icon = icon("refresh"))
   )
 }
 
-filterServer <- function(id, data) {
+filterServer <- function(id, occurence_data) {
   moduleServer(id, function(input, output, session) {
     observe({
       req(input$filter_column)
-      updateSelectInput(session, "filter_value", choices = sort(unique(data[[input$filter_column]])))
+      updateSelectInput(session, "filter_value", choices = sort(unique(occurence_data[[input$filter_column]])))
     })
     
     observe({
@@ -24,11 +24,11 @@ filterServer <- function(id, data) {
     })
     
     observeEvent(input$reset_date, {
-      updateDateRangeInput(session, "date_range", start = min(data$eventDate, na.rm = TRUE), end = max(data$eventDate, na.rm = TRUE))
+      updateDateRangeInput(session, "date_range", start = min(occurence_data$eventDate, na.rm = TRUE), end = max(occurence_data$eventDate, na.rm = TRUE))
     })
     
     filtered_data <- reactive({
-      data %>% filter(eventDate >= input$date_range[1] & eventDate <= input$date_range[2])
+      occurence_data %>% filter(eventDate >= input$date_range[1] & eventDate <= input$date_range[2])
     })
     
     return(list(
