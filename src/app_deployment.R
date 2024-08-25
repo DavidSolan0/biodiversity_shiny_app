@@ -12,9 +12,9 @@ app_dir <- 'C:/Users/Dsola/OneDrive/Documentos/appsilon/biodiversity_shiny_app'
 deployApp(
   appDir = app_dir,                   # Directory containing src and data
   appFiles = c(
-    'src/UI.R',                       # Main UI file
-    'src/server.R',                   # Main server file
-    'src/modules',                   # Include the modules folder
+    'src/UI.R',                                                 # Main UI file
+    'src/server.R',                                             # Main server file
+    'src/modules',                                              # Include the modules folder
     'data/normalized/ocurrence.RData'                           # Include the data folder
   ),
   appPrimaryDoc = 'src/UI.R',         # Set the main document (UI file)
