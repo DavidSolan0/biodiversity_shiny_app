@@ -1,9 +1,9 @@
-name: Shiny Dashboard CICD Check
+name: Shiny_Dashboard_CICD_Check
 
 on: [push, pull_request]
 
 jobs:
-  Shiny Dashboard CICD Check:
+  Shiny_Dashboard_CICD_Check:
     runs-on: ubuntu-latest
 
     steps:
