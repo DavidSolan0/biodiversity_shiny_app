@@ -14,8 +14,8 @@ deployApp(
   appFiles = c(
     'src/UI.R',                       # Main UI file
     'src/server.R',                   # Main server file
-    'src/modules/',                   # Include the modules folder
-    'data/'                           # Include the data folder
+    'src/modules',                   # Include the modules folder
+    'data'                           # Include the data folder
   ),
   appPrimaryDoc = 'src/UI.R',         # Set the main document (UI file)
   appName = 'biodiversity_shiny_app', # Your app name
